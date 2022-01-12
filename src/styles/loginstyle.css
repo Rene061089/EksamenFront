@@ -1,0 +1,116 @@
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.LoginBackground {
+  border: 2px solid;
+  border-color: #1CA9D5;
+  background-color: #9dd3ef;
+  background: linear-gradient(
+    to left,
+    #ffffff,
+    #b4ddf1 10%,
+    #9dd3ef 20%,
+    #9dd3ef 70%,
+    #b4ddf1 90%,
+    #ffffffed 100%
+  );
+  height: 900px;
+  text-align: center;
+  
+}
+
+@media only screen and (width < 1200px) {
+  .LoginBackground {
+     border: none;
+  }
+}
+
+
+.centerFrom{
+ transform: translate(0, 192.2%);
+}
+
+
+.LoginPicBackground {
+  border: 2px solid;
+  border-color: #1CA9D5;
+  background-color: #9dd3ef;
+  background: linear-gradient(
+    to left,
+    #ffffff,
+    #b4ddf1 10%,
+    #9dd3ef 20%,
+    #9dd3ef 70%,
+    #b4ddf1 90%,
+    #ffffffed 100%
+  );
+  /* border-radius: 5% ; */
+  height: 900px;
+  text-align: center;
+  margin-right: 25px;
+  margin-left: 25px;
+}
+
+.button {
+  size: 10cm;
+  width: 150px;
+  height: 30px;
+  background-color: #1CA9D5;
+}
+
+.input1 {
+  
+  margin-bottom: 10px;
+  width: 300px;
+  height: 30px;
+  text-align: center;
+}
+
+.madalinput {
+  
+  margin-top: 10px;
+  width: 300px;
+  height: 30px;
+  text-align: center;
+}
+
+.input2 {
+  margin-bottom: 10px;
+  width: 300px;
+  height: 30px;
+  text-align: center;
+}
+
+.input3 {
+  margin-bottom: 10px;
+  width: 250px;
+  height: 30px;
+  text-align: center;
+}
+
+.imgTop{
+  
+  width: 75%;
+  margin-bottom: 125px;
+  margin-top: 50px;
+  border-radius: 75%;
+  
+}
+
+.img{
+  align-self: center;
+  width: 75%;
+  margin-bottom: 125px;
+  border-radius: 75%;
+  
+}
+
+@media only screen and (width < 1200px) {
+  .displayBlock {
+     display: none;
+  }
+}
+

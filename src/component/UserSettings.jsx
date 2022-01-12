@@ -1,0 +1,38 @@
+import React, { useEffect, useState } from "react";
+import url from "./Url";
+import facade from "./apiFacade";
+import UpdateUserInfo from "./UpdateUserInfo";
+
+
+const UserSettings = () => {
+  const [userInfo, setUserInfo] = useState({
+    dto_gender: "",
+    dto_name: "",
+    dto_age: "",
+    dto_phone: "",
+  });
+
+  const update = async (info) => {
+    const result = await fetch(url + "/api/info/" + facade.getUserName(), {
+      method: "PUT",
+      headers: {
+        "Content-type": "application/json",
+      },
+      body: JSON.stringify(info),
+    });
+    const data = await result.json();
+    setUserInfo(data);
+  };
+  useEffect(() => {
+  }, [userInfo])
+
+  return (
+    
+  <div>
+   <UpdateUserInfo onUpdate={update} />
+  </div>
+  
+)
+};
+
+export default UserSettings;

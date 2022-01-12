@@ -1,0 +1,28 @@
+.AdminEditBackground {
+    border: 2px solid;
+    border-color: #1CA9D5;
+    background-color: #9dd3ef;
+    background: linear-gradient(
+      to left,
+      #ffffff,
+      #b4ddf1 10%,
+      #9dd3ef 20%,
+      #9dd3ef 70%,
+      #b4ddf1 90%,
+      #ffffffed 100%
+    );
+    /* border-radius: 5% ; */
+    height: 900px;
+    text-align: center;
+    margin-right: 25px;
+    margin-left: 25px;
+  }
+
+  .customCard{
+    background: rgb(173, 172, 172) ;
+    border: 1px solid black;
+    margin: 10px;
+    width: 500px;
+    margin-right: auto;
+    margin-left: auto;
+  }

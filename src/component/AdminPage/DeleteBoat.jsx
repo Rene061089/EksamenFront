@@ -1,0 +1,80 @@
+import React from 'react'
+import { useState, useEffect } from 'react'
+import { Card } from 'react-bootstrap'
+
+
+const DeleteBoat = ({facade, url}) => {
+  const [boatID, setBoatID] = useState("")
+  const [msg, setMsg] = useState("")
+  const [getBoats, setBoats] = useState([
+    {
+      dto_boatId: "",
+      dto_brand: "",
+      dto_make: "",
+      dto_name: "",
+    },
+  ]);
+  const getBoatInfo = (data) => {
+    setBoats(data);
+  };
+  useEffect(() => {
+    facade.fetchData("info/allboats", getBoatInfo);
+  }, [msg, ]);
+    
+
+    const nytArray = (() => {
+      let text = getBoats.map((item) => item.dto_boatId).toString();
+        return text
+    })
+    
+
+
+   
+
+    console.log(nytArray());
+    // console.log(boatID);
+    console.log(nytArray().indexOf(boatID));
+    const onSubmit = async (e) => {
+        e.preventDefault();
+       if(nytArray().indexOf(boatID)){
+         setMsg("båd med id "+ boatID+ " findes ikke")
+         setBoatID("")
+       } else{
+          const op = facade.makeOptions("DELETE", true, );
+          await fetch(url + "/api/info/deleteboat/" + boatID, op)
+            .then(facade.handleHttpErrors)   
+            setBoatID("")
+            setMsg("Båd med " + boatID + " er blevet slettet")
+          }
+      };
+
+
+
+    return (
+        <div>
+          <Card className='customCard'>
+             <h2>Delete Boat</h2>
+             <form onSubmit={onSubmit}>     
+        <input
+            type="number"
+            required
+            value={boatID}
+            className="input1"
+            placeholder="Boat ID"
+            onChange={(e) => setBoatID(e.target.value)} 
+          />
+           <br></br>
+          <button style={{ backgroundColor: "red" }} type="Submit">
+            Submit
+          </button>
+          <br></br>
+          {msg}
+        </form>
+        <br></br>
+          
+        </Card>
+        </div>
+    )
+}
+
+export default DeleteBoat

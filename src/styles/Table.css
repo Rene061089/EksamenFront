@@ -1,0 +1,59 @@
+.TableStyle {
+  width: 1024px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+
+.OwnerTable {
+    
+  background-color: rgb(173, 172, 172);
+  color: white;
+   height: 200px;
+   width: auto;
+   background: linear-gradient(to left, black, blue 25%, blue 75%, black 100%);
+   overflow-y: auto;
+   overflow-x: auto;
+   
+   
+ }
+
+ .BoatTable {
+  background-color: rgb(173, 172, 172);
+  color: white;
+   height: 200px;
+   width: auto;
+   /* background: linear-gradient(to left, black, blue 25%, blue 75%, black 100%); */
+   overflow-y: auto;
+   overflow-x: auto;
+ }
+
+
+ .tr-color{
+   color:rgb(0, 0, 0);
+   font-size: 17px;
+ }
+
+  .BoatTable2 {
+  background-color: rgb(173, 172, 172);
+  color: rgb(4, 4, 4);
+  border: 2px solid rgb(97, 96, 96);
+   height: 200px;
+   width: auto;
+   /* background: linear-gradient(to left, black, blue 25%, blue 75%, black 100%); */
+   overflow-y: auto;
+   overflow-x: auto;
+   
+ }
+
+ .BoatOwnerTable {
+  background-color: rgb(173, 172, 172);
+  color: white;
+   height: 200px;
+   width: auto;
+   /* background: linear-gradient(to left, black, blue 25%, blue 75%, black 100%); */
+   overflow-y: auto;
+   overflow-x: auto;
+   
+   
+ }

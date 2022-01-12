@@ -1,0 +1,42 @@
+
+ul.header {
+  border-radius: 25px 25px;
+  list-style-type: none;
+  margin: 15px;
+  padding: 15px;
+  
+  overflow: hidden;
+  background-color: #1CA9D5;
+
+}
+
+
+
+ul.header li {
+  float: left;
+}
+
+
+ul.header li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+ul.header li a:hover:not(.active) {
+  background-color: #4caf50;
+}
+
+
+.selected {
+  background-color: #4caf50;
+}
+
+.header > li:last-child
+{
+    
+    float:right;
+   
+}
+

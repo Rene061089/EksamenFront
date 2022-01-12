@@ -1,0 +1,41 @@
+.CreateDiv{
+
+    text-align: center;
+      
+  }
+  
+  .openModalbtn {
+      background-color: red;
+  }
+  
+  .closeModalbtn{
+  background-color: rgb(14, 216, 243);
+  margin-top: 20px;
+  width: 100px;
+  margin-right: 10px;
+  }
+  
+  
+  .modal {
+      display: none;
+      position: fixed;
+      z-index: 5;
+      background-color: rgba(0, 0, 0, 0.90);
+    }
+  
+    .modal_content {
+      margin-top: 250px;
+      margin-left: auto;
+      margin-right: auto;
+      width: 400px;
+      height: 200px;
+      background: linear-gradient(
+          to left,
+          #ffffff,
+          #b4ddf1 10%,
+          #9dd3ef 20%,
+          #9dd3ef 70%,
+          #b4ddf1 90%,
+          #ffffffed 100%
+        );
+    }
