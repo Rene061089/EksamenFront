@@ -2,10 +2,8 @@ import React, { useEffect, useState } from "react";
 import UpdateUserInfo from "./UpdateUserInfo";
 
 
-const UserSettings = ({setLoggedIn, facade, url}) => {
-//   if(facade.getToken() !== undefined ){
-//     setLoggedIn(true)
-//  }
+const UserSettings = ({ facade, url}) => {
+
  
   const [userInfo, setUserInfo] = useState({
     dto_gender: "",

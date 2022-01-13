@@ -1,8 +1,10 @@
 import React from "react";
+import "../styles/userstyles.css"
 import { useState, useEffect } from "react";
-import { Table } from "react-bootstrap";
+import { Table, Container } from "react-bootstrap";
 import CreateBooking from "./CreateBooking";
 import SetAssistantOnBooking from "./SetAssistantOnBooking";
+import WashingAssistants from "./WashingAssistants";
 
 const UserBookings = ({ facade, url }) => {
   const [toggle, setToggle] = useState(false);
@@ -30,7 +32,10 @@ const UserBookings = ({ facade, url }) => {
 
   let counter = 0;
   return (
+    
     <div>
+      <Container className="MyBookingsBackground" fluid>
+      <CreateBooking facade={facade} url={url}/>
       <div>
         <h3 className="headingCenter">View all my bookings</h3>
         <div className="centerTable">
@@ -62,8 +67,9 @@ const UserBookings = ({ facade, url }) => {
           </div>
         </div>
       </div>
-      <CreateBooking facade={facade} url={url}/>
+      <WashingAssistants facade={facade}/>
       <SetAssistantOnBooking facade={facade} url={url}/>
+      </Container>
     </div>
   );
 };

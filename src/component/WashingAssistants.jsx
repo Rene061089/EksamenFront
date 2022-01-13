@@ -34,7 +34,7 @@ let counter = 0;
         <div>
            <div >
     
-         <h3 className="headingCenter">View of all boats </h3> 
+         <h3 className="headingCenter">View of all Washing Assistants </h3> 
          <div className="centerTable">
         <div className="BoatTable2">
         <button className="headingCenterbutton" onClick={toggleOnClick}>Refresh</button>
@@ -51,11 +51,11 @@ let counter = 0;
             <tbody>
               {getWashingAssistants.map((item) => (
                 <tr key={counter++}>
-                  <td>{<strong>{item.dto_wa_id}</strong>}</td>
-                  <td>{<strong>{item.dto_name}</strong>}</td>
-                  <td>{<strong>{item.dto_primaryLanguage}</strong>}</td>
-                  <td>{<strong>{item.dto_yearsOfXP}</strong>}</td>
-                  <td>{<strong>{item.dto_priceHour}</strong>}</td>
+                  <td>{item.dto_wa_id}</td>
+                  <td>{item.dto_name}</td>
+                  <td>{item.dto_primaryLanguage}</td>
+                  <td>{item.dto_yearsOfXP}</td>
+                  <td>{item.dto_priceHour}{" "}{"Kr."}</td>
                 </tr>
               ))}
             </tbody>

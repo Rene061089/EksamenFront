@@ -12,13 +12,9 @@ import { useState } from "react";
 import DeleteUser from "./component/AdminPage/DeleteUser";
 import UserSettings from "./component/UserSettings";
 import AdminPage from "./component/AdminPage/AdminPage";
-import OwnerPage from "./component/OwnerPage";
-import Harbours from "./component/Harbours";
-import Boats from "./component/Boats";
 import Url from "./component/Url";
 import WashingAssistants from "./component/WashingAssistants";
 import UserBookings from "./component/UserBookings";
-import CreateNewWashingAssistant from "./component/AdminPage/CreateNewWashingAssistant";
 import AdminCarWashControle from "./component/AdminPage/AdminCarWashControle";
 import {
   BrowserRouter as Router,
@@ -26,7 +22,6 @@ import {
   Route,
   NavLink,
 } from "react-router-dom";
-import AdminControlePage from "./component/AdminPage/AdminControlePage";
 
 export default function NavBar() {
   useEffect(() => {
@@ -60,26 +55,6 @@ export default function NavBar() {
           )}
           {facade.hasUserAccess("user", loggedIn) && (
             <li>
-              <NavLink to="/owners">Owners</NavLink>
-            </li>
-          )}
-          {facade.hasUserAccess("user", loggedIn) && (
-            <li>
-              <NavLink to="/harbours">Harbours</NavLink>
-            </li>
-          )}
-          {facade.hasUserAccess("user", loggedIn) && (
-            <li>
-              <NavLink to="/boats">Boats</NavLink>
-            </li>
-          )}
-          {facade.hasUserAccess("admin", loggedIn) && (
-            <li>
-              <NavLink to="/admincontrolepage">Admin Page</NavLink>
-            </li>
-          )}
-          {facade.hasUserAccess("user", loggedIn) && (
-            <li>
               <NavLink to="/settings">Settings</NavLink>
             </li>
           )}
@@ -104,7 +79,7 @@ export default function NavBar() {
               <NavLink to="/admincarcontrolepage">Admin Controle page</NavLink>
             </li>
           <li>
-            <h3 className="customhead">Welcome to the boat harbour sytem</h3>
+            <h3 className="customhead">Welcome to the car-wash sytem</h3>
           </li>
         </ul>
         <br />
@@ -142,20 +117,7 @@ export default function NavBar() {
                 }
               />
             )}
-            {facade.hasUserAccess("admin", loggedIn) && (
-              <Route
-                path="/admincontrolepage"
-                element={
-                  <AdminControlePage
-                    url={Url}
-                    facade={facade}
-                    setLoggedIn={setLoggedIn}
-                  />
-                }
-              />
-            )}
-
-            
+          
               <Route
               path="/admincarcontrolepage"
               element={<AdminCarWashControle facade={facade} setLoggedIn={setLoggedIn} url={Url} />}
@@ -168,27 +130,6 @@ export default function NavBar() {
               path="/userbookings"
               element={<UserBookings facade={facade} url={Url} />}
             />
-
-            {facade.hasUserAccess("user", loggedIn) && (
-              <Route
-                path="/owners"
-                element={
-                  <OwnerPage facade={facade} setLoggedIn={setLoggedIn} />
-                }
-              />
-            )}
-            {facade.hasUserAccess("user", loggedIn) && (
-              <Route
-                path="/harbours"
-                element={<Harbours facade={facade} setLoggedIn={setLoggedIn} />}
-              />
-            )}
-            {facade.hasUserAccess("user", loggedIn) && (
-              <Route
-                path="/boats"
-                element={<Boats facade={facade} setLoggedIn={setLoggedIn} />}
-              />
-            )}
             {facade.hasUserAccess("user", loggedIn) && (
               <Route
                 path="/settings"
@@ -212,7 +153,6 @@ export default function NavBar() {
                 />
               }
             />
-
             {facade.hasUserAccess("user", "admin", loggedIn) && (
               <Route
                 path="/deleteUser"
