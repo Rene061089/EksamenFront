@@ -1,8 +1,10 @@
 import React from "react";
 import { useState, useEffect } from "react";
 import { Table } from "react-bootstrap";
+import CreateBooking from "./CreateBooking";
+import SetAssistantOnBooking from "./SetAssistantOnBooking";
 
-const UserBookings = ({ facade }) => {
+const UserBookings = ({ facade, url }) => {
   const [toggle, setToggle] = useState(false);
   const [getMyBookings, setMyBookings] = useState([
     {
@@ -60,6 +62,8 @@ const UserBookings = ({ facade }) => {
           </div>
         </div>
       </div>
+      <CreateBooking facade={facade} url={url}/>
+      <SetAssistantOnBooking facade={facade} url={url}/>
     </div>
   );
 };

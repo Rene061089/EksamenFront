@@ -166,7 +166,7 @@ export default function NavBar() {
             />
             <Route
               path="/userbookings"
-              element={<UserBookings facade={facade} setLoggedIn={setLoggedIn} />}
+              element={<UserBookings facade={facade} url={Url} />}
             />
 
             {facade.hasUserAccess("user", loggedIn) && (
