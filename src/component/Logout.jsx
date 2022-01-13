@@ -6,7 +6,7 @@ export const Logout = ({ setLoggedIn }) => {
   facade.logout();
   setLoggedIn(false);
   localStorage.clear()
-  navigate("/harbour");
+  navigate("/");
   return null;
 };
 

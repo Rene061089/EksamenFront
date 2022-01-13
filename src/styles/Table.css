@@ -39,7 +39,7 @@
   color: rgb(4, 4, 4);
   border: 2px solid rgb(97, 96, 96);
    height: 200px;
-   width: auto;
+   width: 90%;
    /* background: linear-gradient(to left, black, blue 25%, blue 75%, black 100%); */
    overflow-y: auto;
    overflow-x: auto;

@@ -1,15 +1,14 @@
-import facade from "../apiFacade";
-import URL from "../Url";
 import { useNavigate } from "react-router-dom";
 import "../../styles/deleteUser.css";
 
-function DeleteUser({ setLoggedIn }) {
+function DeleteUser({ setLoggedIn, url, facade }) {
+ 
   const userToDelete = facade.getUserName();
   let navigate = useNavigate();
 
   function deleteThatUserNow() {
     const op = facade.makeOptions("DELETE", true, userToDelete);
-    fetch(URL + "/api/info/" + userToDelete, op)
+    fetch(url + "/api/info/" + userToDelete, op)
       .then(facade.handleHttpErrors)
       .then(localStorage.clear())
       .then(

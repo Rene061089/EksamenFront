@@ -7,7 +7,6 @@ const PutBoatInHarbour = ({facade, url}) => {
 
     const [boatID, setBoatID] = useState("");
     const [harbourID, setHarbourID] = useState("");
-    const [errormessage, setErrorMessage] = useState("")
 
     const handleSubmitForBoatsInHArbour = async (e) => {
         e.preventDefault();

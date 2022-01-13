@@ -2,11 +2,9 @@ import { Container } from "react-bootstrap";
 import React, { useState } from "react";
 import "../styles/loginstyle.css";
 import "../styles/userInfoLabel.css";
-import facade from "./apiFacade";
-import url from "./Url";
 import { useNavigate } from "react-router-dom";
 
-const UserData = ({ setLoggedIn }) => {
+const UserData = ({ setLoggedIn, url, facade }) => {
   const [userdata, setUserdata] = useState({
     dto_userName: "",
     dto_userPass: "",
@@ -38,7 +36,7 @@ const UserData = ({ setLoggedIn }) => {
         .then(await delay(2000))
         .then(await facade.login(userdata.dto_userName, userdata.dto_userPass))
         .then(setLoggedIn(true));
-      navigate("/mypage");
+      navigate("/");
     }
   };
 

@@ -1,10 +1,12 @@
 import React, { useEffect, useState } from "react";
-import url from "./Url";
-import facade from "./apiFacade";
 import UpdateUserInfo from "./UpdateUserInfo";
 
 
-const UserSettings = () => {
+const UserSettings = ({setLoggedIn, facade, url}) => {
+//   if(facade.getToken() !== undefined ){
+//     setLoggedIn(true)
+//  }
+ 
   const [userInfo, setUserInfo] = useState({
     dto_gender: "",
     dto_name: "",
@@ -29,7 +31,7 @@ const UserSettings = () => {
   return (
     
   <div>
-   <UpdateUserInfo onUpdate={update} />
+   <UpdateUserInfo onUpdate={update} facade={facade} url={url} />
   </div>
   
 )

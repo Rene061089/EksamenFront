@@ -1,3 +1,3 @@
-const url = "https://www.dataelev.dk/tomcat/24TimersBack";
+const url = "http://localhost:8080/24TimersBack";
 
 export default url;

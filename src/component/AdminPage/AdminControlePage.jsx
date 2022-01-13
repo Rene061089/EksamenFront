@@ -1,31 +1,27 @@
 import React from "react";
+import "../../styles/AdminStyles.css";
+import "../../styles/createNewBoat.css";
 import { Container, Row, Col } from "react-bootstrap";
 import DeleteBoat from "./DeleteBoat";
 import UpdateBoat from "./UpdateBoat";
 import SetBoatOwner from "./SetBoatOwner";
 import Harbours from "../Harbours";
 import Boats from "../Boats";
-import "../../styles/AdminStyles.css";
-import "../../styles/createNewBoat.css";
 import PutBoatInHarbour from "./PutBoatInHarbour";
 import CreateBoat from "./CreateBoat";
 import OwnerPage from "../OwnerPage";
 
 
-const CreateNewBoat = ({ facade, url, setLoggedIn, loggedin }) => {
+const CreateNewBoat = ({ facade, url}) => {
 
-  console.log("se her " + facade.getToken());
-  if(facade.getToken() !== undefined ){
-   setLoggedIn(true)
-}
   return (
     <div>
       <Row>
         <Col lg={4}>
           <Container className="AdminEditBackground" fluid>
             <div>
-              <Boats facade={facade} url={url} />
-              <OwnerPage facade={facade} url={url}/>
+              <Boats facade={facade} />
+              <OwnerPage facade={facade}  />
             </div>
           </Container>
         </Col>
@@ -42,7 +38,7 @@ const CreateNewBoat = ({ facade, url, setLoggedIn, loggedin }) => {
 
         <Col lg={4}>
           <Container className="AdminEditBackground" fluid>
-            <Harbours facade={facade} url={url}/>
+            <Harbours facade={facade}  />
           </Container>
         </Col>
       </Row>

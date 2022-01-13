@@ -22,6 +22,7 @@ function apiFacade() {
   const logout = () => {
     localStorage.removeItem("jwtToken");
   };
+  
 
   const login = (user, password, setLoggedIn) => {
     const options = makeOptions("POST", true, {

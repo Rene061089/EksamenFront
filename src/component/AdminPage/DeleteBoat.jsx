@@ -19,7 +19,7 @@ const DeleteBoat = ({facade, url}) => {
   };
   useEffect(() => {
     facade.fetchData("info/allboats", getBoatInfo);
-  }, [msg, ]);
+  }, [msg]);
     
 
     const nytArray = (() => {
@@ -29,24 +29,26 @@ const DeleteBoat = ({facade, url}) => {
     
 
 
-   
 
-    console.log(nytArray());
-    // console.log(boatID);
-    console.log(nytArray().indexOf(boatID));
+  
     const onSubmit = async (e) => {
-        e.preventDefault();
-       if(nytArray().indexOf(boatID)){
-         setMsg("båd med id "+ boatID+ " findes ikke")
-         setBoatID("")
-       } else{
-          const op = facade.makeOptions("DELETE", true, );
-          await fetch(url + "/api/info/deleteboat/" + boatID, op)
-            .then(facade.handleHttpErrors)   
-            setBoatID("")
-            setMsg("Båd med " + boatID + " er blevet slettet")
-          }
-      };
+      e.preventDefault();
+     if (nytArray.length === -1) {
+        setMsg("der er ingen både i databasen");
+        setBoatID("");
+      } else if (!nytArray().includes(boatID) || nytArray.length >= 1 ) {
+        setMsg("båd med id " + boatID + " findes ikke");
+        setBoatID("");
+      } else {
+        const op = facade.makeOptions("DELETE", true);
+        await fetch(url + "/api/info/deleteboat/" + boatID, op).then(
+          facade.handleHttpErrors
+        );
+  
+        setBoatID("");
+        setMsg("Båd med id: " + boatID + " er blevet slettet");
+      }
+    };
 
 
 

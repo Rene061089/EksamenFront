@@ -1,11 +1,10 @@
 import React, { useEffect, useState } from "react";
 import { Button, Container, Row, Col, Table } from "react-bootstrap";
-import facade from "./apiFacade";
-import url from "./Url";
 import "../styles/userInfoLabel.css";
 import "../styles/loginstyle.css";
 
-const UpdateUserInfo = ({ onUpdate }) => {
+const UpdateUserInfo = ({ onUpdate, facade, url }) => {
+ 
   const [toggle, setToggle] = useState(false);
 
   const [placeholder, setPlaceholder] = useState({

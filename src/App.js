@@ -3,7 +3,7 @@ import "./styles/customHead.css";
 import "./styles/logincss.css";
 import "./styles/Table.css";
 import Home from "./component/Home";
-import React from "react";
+import React, { useEffect } from "react";
 import { LoginUI } from "./component/LogIn";
 import { Logout } from "./component/Logout";
 import Signup from "./component/Signup";
@@ -16,6 +16,8 @@ import OwnerPage from "./component/OwnerPage";
 import Harbours from "./component/Harbours";
 import Boats from "./component/Boats";
 import Url from "./component/Url";
+import WashingAssistants from "./component/WashingAssistants";
+import UserBookings from "./component/UserBookings";
 import {
   BrowserRouter as Router,
   Routes,
@@ -25,6 +27,11 @@ import {
 import AdminControlePage from "./component/AdminPage/AdminControlePage";
 
 export default function NavBar() {
+  useEffect(() => {
+    if (facade.getToken() !== null) {
+      setLoggedIn(true);
+    }
+  }, []);
   const [loggedIn, setLoggedIn] = useState(false);
 
   return (
@@ -32,7 +39,7 @@ export default function NavBar() {
       <div className="bagGrund">
         <ul className="header">
           <li>
-            <NavLink to="/harbour">Home</NavLink>
+            <NavLink to="/">Home</NavLink>
           </li>
           {facade.hasUserAccess("admin", loggedIn) && (
             <li>
@@ -79,20 +86,26 @@ export default function NavBar() {
               <NavLink to="/logout">Logout</NavLink>
             </li>
           )}
-          
+
           {facade.hasUserAccess("user", loggedIn) && (
             <li>
               <NavLink to="/deleteUser">Delete user</NavLink>
             </li>
           )}
           <li>
-            <h2 className="customhead">Welcome to the boat harbour sytem</h2>
+              <NavLink to="/washingassistants">Washing Assistants</NavLink>
+            </li>
+             <li>
+              <NavLink to="/userbookings">My Bookings</NavLink>
+            </li>
+          <li>
+            <h3 className="customhead">Welcome to the boat harbour sytem</h3>
           </li>
         </ul>
         <br />
         <div className="content">
           <Routes>
-            <Route path="/harbour" element={<Home />} />
+            <Route path="/" element={<Home />} />
 
             <Route
               className="LoginBackground"
@@ -109,10 +122,20 @@ export default function NavBar() {
             <Route
               className="LoginBackground"
               path="/logout"
-              element={<Logout loggedIn={loggedIn} setLoggedIn={setLoggedIn} loggedin={loggedIn} />}
+              element={<Logout loggedIn={loggedIn} setLoggedIn={setLoggedIn} />}
             />
+
             {facade.hasUserAccess("admin", loggedIn) && (
-              <Route path="/adminuserpage" element={<AdminPage url={Url} />} />
+              <Route
+                path="/adminuserpage"
+                element={
+                  <AdminPage
+                    url={Url}
+                    setLoggedIn={setLoggedIn}
+                    facade={facade}
+                  />
+                }
+              />
             )}
             {facade.hasUserAccess("admin", loggedIn) && (
               <Route
@@ -125,21 +148,47 @@ export default function NavBar() {
                   />
                 }
               />
-             )} 
+            )}
+
+            <Route
+              path="/washingassistants"
+              element={<WashingAssistants facade={facade} setLoggedIn={setLoggedIn} />}
+            />
+            <Route
+              path="/userbookings"
+              element={<UserBookings facade={facade} setLoggedIn={setLoggedIn} />}
+            />
+
             {facade.hasUserAccess("user", loggedIn) && (
-              <Route path="/owners" element={<OwnerPage facade={facade} />} />
+              <Route
+                path="/owners"
+                element={
+                  <OwnerPage facade={facade} setLoggedIn={setLoggedIn} />
+                }
+              />
             )}
             {facade.hasUserAccess("user", loggedIn) && (
-              <Route path="/harbours" element={<Harbours facade={facade} />} />
+              <Route
+                path="/harbours"
+                element={<Harbours facade={facade} setLoggedIn={setLoggedIn} />}
+              />
             )}
             {facade.hasUserAccess("user", loggedIn) && (
-              <Route path="/boats" element={<Boats facade={facade} />} />
+              <Route
+                path="/boats"
+                element={<Boats facade={facade} setLoggedIn={setLoggedIn} />}
+              />
             )}
             {facade.hasUserAccess("user", loggedIn) && (
               <Route
                 path="/settings"
-                element={<UserSettings />}
-                facade={facade}
+                element={
+                  <UserSettings
+                    setLoggedIn={setLoggedIn}
+                    facade={facade}
+                    url={Url}
+                  />
+                }
               />
             )}
             <Route
@@ -149,10 +198,12 @@ export default function NavBar() {
                   facade={facade}
                   loggedIn={loggedIn}
                   setLoggedIn={setLoggedIn}
+                  url={Url}
                 />
               }
             />
-            {facade.hasUserAccess("user", loggedIn) && (
+
+            {facade.hasUserAccess("user", "admin", loggedIn) && (
               <Route
                 path="/deleteUser"
                 element={
@@ -160,6 +211,7 @@ export default function NavBar() {
                     facade={facade}
                     loggedIn={loggedIn}
                     setLoggedIn={setLoggedIn}
+                    url={Url}
                   />
                 }
               />

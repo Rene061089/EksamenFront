@@ -1,8 +1,10 @@
 import React from "react";
 import { useEffect, useState } from "react";
 import { Table } from "react-bootstrap";
+import "../styles/homepage.css"
 
-const Boats = ({ facade }) => {
+const Boats = ({ facade, setLoggedIn }) => {
+
   const [toggle, setToggle] = useState(false);
   const [getBoats, setBoats] = useState([
     {
@@ -51,10 +53,12 @@ const Boats = ({ facade }) => {
   let counter = 0;
   return (
     
-      <div>
-         <h3>View of all boats </h3> <button style={{ backgroundColor: "red" }} onClick={toggleOnClick}>Refresh</button>
-        {/* <Container className="BoatTable"> */}
-        <div className="BoatTable2"> 
+      <div >
+    
+         <h3 className="headingCenter">View of all boats </h3> 
+         <div className="centerTable">
+        <div className="BoatTable2">
+        <button className="headingCenterbutton" onClick={toggleOnClick}>Refresh</button>
           <Table  bordered  responsive>
             <thead >
               <tr className="tr-color">
@@ -76,9 +80,11 @@ const Boats = ({ facade }) => {
             </tbody>
           </Table>
           </div>
-        {/* </Container> */}
+        </div>
 
-        <h3>View of boat owner/owners</h3>
+        
+        <h3 className="headingCenter">View of boat owner/owners</h3>
+        <div className="centerTable">
         <div className="BoatTable2"> 
           <form onSubmit={handleSubmit}>
             <label>
@@ -117,6 +123,7 @@ const Boats = ({ facade }) => {
               ))}
             </tbody>
           </Table>
+        </div>
         </div>
       </div>
     

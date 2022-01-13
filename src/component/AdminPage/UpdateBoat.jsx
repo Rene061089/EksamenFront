@@ -1,10 +1,9 @@
 import React, { useEffect } from "react";
 import { useState } from "react";
 import { Card } from "react-bootstrap";
-
 import UpdateBoatName from "./UpdateBoatName";
 
-const UpdateBoat = ({facade, url}) => {
+const UpdateBoat = ({url}) => {
   const [boatName, setBoatName] = useState({
     dto_name: "",
   });
@@ -24,20 +23,6 @@ const UpdateBoat = ({facade, url}) => {
 
   };
   useEffect(() => {}, [boatName]);
-
-//       const update = async (info) => {
-
-//           const op = facade.makeOptions("PUT", true, boatName);
-//           console.log(boatName);
-//           const result = await fetch(url + "/api/info/updateboatname/" + boatID, op)
-//           const res = await result.json();
-
-//           console.log(res);
-//           setBoatName(res)
-//           console.log(boatName);
-//         };
-//   useEffect(() => {
-//   },[boatName])
 
   return (
     <div>

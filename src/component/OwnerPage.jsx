@@ -3,7 +3,10 @@ import { useEffect, useState } from 'react';
 import { Table} from 'react-bootstrap';
 
 
-const OwnerPage = ({facade}) => {
+const OwnerPage = ({facade, setLoggedIn}) => {
+//   if(facade.getToken() !== undefined ){
+//     setLoggedIn(true)
+//  }
 
     const [getOwners, setOwners] = useState([]);
 
@@ -20,7 +23,9 @@ let counter = 0;
     return (
        
         <div>
-          <h3>All owners </h3>
+          
+          <h3 className="headingCenter">All owners </h3>
+          <div className="centerTable">
           <div className="BoatTable2">
           <Table bordered responsive>
           <thead>
@@ -42,6 +47,7 @@ let counter = 0;
             ))}
           </tbody>
           </Table>
+          </div>
           </div>
         </div>
         

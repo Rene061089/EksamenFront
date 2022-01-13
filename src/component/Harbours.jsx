@@ -1,7 +1,10 @@
 import { useEffect, useState } from "react";
-import { Table, Container } from "react-bootstrap";
+import { Table} from "react-bootstrap";
 
-const Harbours = ({ facade }) => {
+const Harbours = ({ facade, setLoggedIn }) => {
+//   if(facade.getToken() !== undefined ){
+//     setLoggedIn(true)
+//  }
   const [getHarbours, setHarbours] = useState([""]);
   const [getBoatsInHarbour, setBoatsInHArbour] = useState([""]);
   const [harbourId, setHarbourID] = useState("");
@@ -39,7 +42,9 @@ const Harbours = ({ facade }) => {
   return (
    
       <div>
-        <h3>All harbours</h3>
+        
+        <h3 className="headingCenter">All harbours</h3>
+        <div className="centerTable">
         <div className="BoatTable2"> 
           <Table bordered responsive>
             <thead>
@@ -62,9 +67,10 @@ const Harbours = ({ facade }) => {
             </tbody>
           </Table>
         </div>
-
+        </div>
         
-        <h3>All boats in harbours</h3>
+        <h3 className="headingCenter">All boats in harbours</h3>
+        <div className="centerTable">
         <div className="BoatTable2">  
         <form onSubmit={handleSubmit}>
           <label>
@@ -99,6 +105,7 @@ const Harbours = ({ facade }) => {
               ))}
             </tbody>
           </Table>
+        </div>
         </div>
       </div>
     
