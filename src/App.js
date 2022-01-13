@@ -18,6 +18,8 @@ import Boats from "./component/Boats";
 import Url from "./component/Url";
 import WashingAssistants from "./component/WashingAssistants";
 import UserBookings from "./component/UserBookings";
+import CreateNewWashingAssistant from "./component/AdminPage/CreateNewWashingAssistant";
+import AdminCarWashControle from "./component/AdminPage/AdminCarWashControle";
 import {
   BrowserRouter as Router,
   Routes,
@@ -98,6 +100,9 @@ export default function NavBar() {
              <li>
               <NavLink to="/userbookings">My Bookings</NavLink>
             </li>
+            <li>
+              <NavLink to="/admincarcontrolepage">Admin Controle page</NavLink>
+            </li>
           <li>
             <h3 className="customhead">Welcome to the boat harbour sytem</h3>
           </li>
@@ -150,6 +155,11 @@ export default function NavBar() {
               />
             )}
 
+            
+              <Route
+              path="/admincarcontrolepage"
+              element={<AdminCarWashControle facade={facade} setLoggedIn={setLoggedIn} url={Url} />}
+            />
             <Route
               path="/washingassistants"
               element={<WashingAssistants facade={facade} setLoggedIn={setLoggedIn} />}
