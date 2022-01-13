@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from "react";
 import { Table } from "react-bootstrap";
 
-const AdminPage = ({url, facade }) => {
-
+const AdminPage = ({url, setLoggedIn, facade }) => {
+//   if(facade.getToken() !== undefined ){
+//     setLoggedIn(true)
+//  }
 
   const [users, setUsers] = useState([
     {

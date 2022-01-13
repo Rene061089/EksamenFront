@@ -29,7 +29,7 @@ const AssistantInfo = ({update, prosID}) => {
 
     return (
         <div>
-        <h2>Update boat name</h2>
+        <h2>Update Assistant</h2>
         <form onSubmit={onSubmitID}>
           <input
             type="number"

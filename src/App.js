@@ -53,31 +53,39 @@ export default function NavBar() {
               <NavLink to="/signup">Sign-up</NavLink>
             </li>
           )}
+          
+         
           {facade.hasUserAccess("user", loggedIn) && (
+          <li>
+              <NavLink to="/washingassistants">Washing Assistants</NavLink>
+            </li>
+            )}
+             {facade.hasUserAccess("user", loggedIn) && (
+             <li>
+              <NavLink to="/userbookings">My Bookings</NavLink>
+            </li>
+            )}
+            {facade.hasUserAccess("admin", loggedIn) && (
+            <li>
+              <NavLink to="/admincarcontrolepage">Admin Controle page</NavLink>
+            </li>
+            )}
+            {facade.hasUserAccess("user", loggedIn) && (
             <li>
               <NavLink to="/settings">Settings</NavLink>
             </li>
           )}
-          {facade.loginCheck(!loggedIn) && (
-            <li>
-              <NavLink to="/logout">Logout</NavLink>
-            </li>
-          )}
-
+        
           {facade.hasUserAccess("user", loggedIn) && (
             <li>
               <NavLink to="/deleteUser">Delete user</NavLink>
             </li>
           )}
-          <li>
-              <NavLink to="/washingassistants">Washing Assistants</NavLink>
-            </li>
-             <li>
-              <NavLink to="/userbookings">My Bookings</NavLink>
-            </li>
+               {facade.loginCheck(!loggedIn) && (
             <li>
-              <NavLink to="/admincarcontrolepage">Admin Controle page</NavLink>
+              <NavLink to="/logout">Logout</NavLink>
             </li>
+          )}
           <li>
             <h3 className="customhead">Welcome to the car-wash sytem</h3>
           </li>
@@ -118,18 +126,24 @@ export default function NavBar() {
               />
             )}
           
+          {facade.hasUserAccess("admin", loggedIn) && (
               <Route
               path="/admincarcontrolepage"
               element={<AdminCarWashControle facade={facade} setLoggedIn={setLoggedIn} url={Url} />}
             />
+            )}
+            {facade.hasUserAccess("user", loggedIn) && (
             <Route
               path="/washingassistants"
               element={<WashingAssistants facade={facade} setLoggedIn={setLoggedIn} />}
             />
+            )}
+             {facade.hasUserAccess("user", loggedIn) && (
             <Route
               path="/userbookings"
               element={<UserBookings facade={facade} url={Url} />}
             />
+            )}
             {facade.hasUserAccess("user", loggedIn) && (
               <Route
                 path="/settings"

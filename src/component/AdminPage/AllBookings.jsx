@@ -47,7 +47,7 @@ const AllBookings = ({facade}) => {
              {getBookings.map((item) => (
                <tr key={counter++}>
                  <td>{item.dto_booking_id}</td>
-                 <td>{item.dto_duration}{" "}{"hrs."}</td>
+                 <td>{item.dto_duration}</td>
                  <td>{item.dto_date}</td>
                  <td>{item.dto_time}</td>
                </tr>
