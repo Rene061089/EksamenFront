@@ -7,6 +7,7 @@ import AllBookings from "./AllBookings";
 import CreateNewWashingAssistant from "./CreateNewWashingAssistant";
 import WashingAssistants from "../WashingAssistants";
 import SetAssistantOnBooking from "../SetAssistantOnBooking";
+import UpdateAssistant from "./UpdateAssistant";
 
 const AdminCarWashControle = ({facade, url}) => {
     return (
@@ -33,7 +34,7 @@ const AdminCarWashControle = ({facade, url}) => {
 
         <Col lg={4}>
           <Container className="AdminEditBackground" fluid>
-            
+            <UpdateAssistant facade={facade} url={url}/>
           </Container>
         </Col>
       </Row>
