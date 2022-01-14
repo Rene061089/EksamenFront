@@ -43,7 +43,7 @@ const CreateNewWashingAssistant = ({facade, url}) => {
     return (
         <div>
             
-             <Card className='customCard'>
+             <Card style={{marginTop: 60}} className='customCard'>
              <h2 className="headingCenter" >Create Assistant</h2>
             
             <div className="CreateDiv">

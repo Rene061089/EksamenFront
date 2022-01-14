@@ -36,6 +36,7 @@ const UserBookings = ({ facade, url }) => {
     <div>
       <Container className="MyBookingsBackground" fluid>
       <CreateBooking facade={facade} url={url}/>
+      <SetAssistantOnBooking facade={facade} url={url}/>
       <div>
         <h3 className="headingCenter">View all my bookings</h3>
         <div className="centerTable">
@@ -68,7 +69,7 @@ const UserBookings = ({ facade, url }) => {
         </div>
       </div>
       <WashingAssistants facade={facade}/>
-      <SetAssistantOnBooking facade={facade} url={url}/>
+      
       </Container>
     </div>
   );

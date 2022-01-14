@@ -22,9 +22,11 @@ const SetAssistantOnBooking = ({facade, url}) => {
 
     return (
         <div>
-        <Card className="customUsertoAssistCard" >
-        <h2>Set Assistant on Booking</h2>
+          
+        <Card style={{marginTop: 50}} className="customUsertoAssistCard" > 
+        
         <form onSubmit={onSubmit}>
+        <h3>Set Assistant on Booking</h3>
           <input
             type="number"
             required

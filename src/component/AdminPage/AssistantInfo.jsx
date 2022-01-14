@@ -39,8 +39,8 @@ const AssistantInfo = ({update, prosID}) => {
             placeholder="Assistant id"
             onChange={(e) => setAssistentID(e.target.value)}
           />{" "}
-          
-          <button style={{ backgroundColor: "red" }} type="Submit">
+          <br></br>
+          <button style={{ backgroundColor: "red", marginBottom: 10  }} type="Submit">
             Submit
           </button>
         </form>

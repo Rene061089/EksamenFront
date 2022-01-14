@@ -17,6 +17,9 @@ const AdminCarWashControle = ({facade, url}) => {
           <Container className="AdminEditBackground" fluid>
             <div>
               <AllBookings facade={facade} />
+              <br></br>
+              <br></br>
+              <br></br>
               <WashingAssistants facade={facade}  />
             </div>
           </Container>
@@ -25,8 +28,11 @@ const AdminCarWashControle = ({facade, url}) => {
         <Col lg={4}>
           <Container className="LoginBackground" fluid>
             <CreateNewWashingAssistant facade={facade} url={url}/>
-           
-            <SetAssistantOnBooking facade={facade}  url={url}/>
+              <br></br>
+            <SetAssistantOnBooking className="SetAssistantAdmin" facade={facade}  url={url}/>
+            <br></br>
+              <br></br>
+              <br></br>
             <DeleteBooking facade={facade}  url={url}/>
             
           </Container>
@@ -34,6 +40,7 @@ const AdminCarWashControle = ({facade, url}) => {
 
         <Col lg={4}>
           <Container className="AdminEditBackground" fluid>
+          <br></br>
             <UpdateAssistant facade={facade} url={url}/>
           </Container>
         </Col>

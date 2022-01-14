@@ -26,3 +26,13 @@
     margin-right: auto;
     margin-left: auto;
   }
+  .SetAssistantAdmin{
+    display: block;
+    text-align: center;
+    background: rgb(173, 172, 172) ;
+    border: 1px solid black;
+    margin: 10px;
+    width: 90%;
+    margin-right: auto;
+    margin-left: auto;
+  }

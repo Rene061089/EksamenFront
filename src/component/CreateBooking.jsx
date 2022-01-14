@@ -68,7 +68,7 @@ const CreateBooking = ({facade, url}) => {
                     />
                     {<br></br>}
                     <input
-                      type="text"
+                      type="Date"
                       required
                       value={crateBooking.dto_date}
                       onChange={handleChange}
@@ -78,7 +78,7 @@ const CreateBooking = ({facade, url}) => {
                     />
                     {<br></br>}
                     <input
-                      type="text"
+                      type="Time"
                       required
                       value={crateBooking.dto_time}
                       onChange={handleChange}

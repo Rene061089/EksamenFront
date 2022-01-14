@@ -33,7 +33,7 @@ const UpdateAssistant = ({url}) => {
 console.log(assistantID);
     return (
       <div>
-          <Card className="customCard">
+          <Card style={{marginTop: 40}} className="customCard">
           <AssistantInfo prosID={setAssistantID} update={update} />
           </Card>
       </div>
